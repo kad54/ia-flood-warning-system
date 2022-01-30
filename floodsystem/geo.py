@@ -42,4 +42,26 @@ def rivers_with_station(stations):
     # Sort by alphabetical order
     return sorted(rivers)
 
+def stations_by_river(stations):
+
+    # Create an empty dict to hold the rivers
+    rivers_and_stations = {}
+
+    # Iterate through all stations
+    for station in stations:
+
+        # Add the river and station name to the dict if the river is not already in the dict
+        if station.river not in rivers_and_stations.keys():
+            rivers_and_stations[station.river]=[station.name]
+
+        # Append the station name to the corresponding river (key) in the dict
+        else:
+            rivers_and_stations[station.river].append(station.name)
+
+    # Iterate through all dict items and sort the lists of station names (value) in alphabetical order
+    for key in rivers_and_stations:
+        rivers_and_stations[key].sort()
+
+    return rivers_and_stations
+
     return stationList
