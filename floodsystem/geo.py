@@ -27,4 +27,19 @@ def stations_by_distance(stations, p):
     #sort list by distance
     stationList = sorted_by_key(stationList, 2)
 
+def rivers_with_station(stations):
+    """Given a list of station objects, returns a container list with the names of the rivers 
+        with a monitoring station"""
+
+    # Create an empty list to hold the rivers
+    rivers = []
+
+    # Iterate through the stations and append the river into the list if it is not already in the list
+    for station in stations:
+        if station.river not in rivers:
+            rivers.append(station.river)
+    
+    # Sort by alphabetical order
+    return sorted(rivers)
+
     return stationList
